@@ -3,248 +3,311 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Borys Solorzano</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <style>
+      :root {
+        --primary: #007bff;
+        --bg-light: #f9f9f9;
+        --bg-accent: #f2e9e4;
+        --text-dark: #222;
+        --text-muted: #666;
+        --radius: 12px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #f8f9fa, #e0e7ff);
+        color: var(--text-dark);
+        min-height: 100vh;
+      }
+
+      header.top-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 5vw;
+        background-color: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        background-color: var(--primary);
+        border-radius: 50%;
+      }
+
+      nav a {
+        margin-left: 20px;
+        font-size: 1rem;
+        text-decoration: none;
+        color: var(--text-muted);
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: var(--primary);
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 5vh 5vw;
+        align-items: stretch;
+      }
+
+      .card {
+        background-color: white;
+        padding: 2rem;
+        border-radius: var(--radius);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .left-side {
+        background-color: var(--bg-accent);
+        align-items: center;
+        text-align: center;
+      }
+
+      #profile-pic {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+        border: 5px solid white;
+        box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
+      }
+
+      h2 {
+        margin-bottom: 0.25rem;
+        font-size: 1.6rem;
+      }
+
+      #tagline {
+        font-size: 1rem;
+        color: var(--text-muted);
+      }
+
+      .social-icons {
+        margin-top: 1rem;
+      }
+
+      .social-icons a {
+        margin: 0 8px;
+        font-size: 1.2rem;
+        color: #555;
+        transition: transform 0.3s, color 0.3s;
+      }
+
+      .social-icons a:hover {
+        color: var(--primary);
+        transform: scale(1.2);
+      }
+
+      .right-side h1 {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+        color: var(--primary);
+      }
+
+      .right-side h3 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+      }
+
+      .right-side p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin-bottom: 20px;
+      }
+
+      .button {
+        background-color: transparent;
+        border: 2px solid black;
+        padding: 10px 20px;
+        border-radius: 40px;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        margin: 5px;
+        transition: all 0.3s;
+        display: inline-block;
+        text-align: center;
+      }
+
+      .button:hover {
+        background-color: black;
+        color: white;
+      }
+
+      .resume {
+        background-color: var(--primary);
+        color: white;
+        border-color: var(--primary);
+      }
+
+      .resume:hover {
+        background-color: #0056b3;
+      }
+
+      .image-wrap {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+      }
+
+      .image-wrap img {
+        width: 130px;
+        height: 130px;
+        border-radius: var(--radius);
+        object-fit: cover;
+      }
+
+      .image-wrap p {
+        flex: 1;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+      }
+
+      @media (max-width: 768px) {
+        .image-wrap {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .image-wrap img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      h1 {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
   </head>
-  <style>
-    body {
-      /* border: 2px solid red; */
-      height: 100vh;
-      width: 100vw;
-      margin: 0;
-      box-sizing: border-box;
-      margin: 0;
-      background-color: whitesmoke;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    .top-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 120px;
-      font-size: 18px;
-    }
-    .logo-name {
-      font-weight: bold;
-      color: #333;
-      font-size: 35px;
-    }
-    nav a {
-      margin-left: 20px;
-      font-weight: 500;
-      color: #555;
-    }
-    .logo .dot {
-      /* width: 10px;
-  height: 10px; */
-      background-color: #007bff;
-      border-radius: 50%;
-      /* display: inline-block; */
-      margin-right: 8px;
-    }
 
-    .social-icons {
-      margin-top: 10px;
-    }
-
-    .social-icons a {
-      margin: 0 10px;
-      font-size: 24px;
-      color: #333;
-      text-decoration: none;
-      display: inline-flex;
-      bottom: 10px;
-      transition: color 0.3s;
-    }
-
-    .social-icons a:hover {
-      color: #007bff; /* Change this to match your theme */
-    }
-    #background-box {
-      position: absolute;
-      display: flex;
-      justify-content: start;
-      align-items: start;
-      /* border: 2px solid blue; */
-      width: 35%;
-      height: 85%;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
-      background-color: rgb(230, 218, 206);
-    }
-    /* #content {
-  position: absolute;
-  top: 20%;
-  left: 25%;
-  width: 40%;
-  height: 55%;
-  display: flex;
-  flex-direction: row;
-  border: 2px solid blue;
-  background: white;
-  box-sizing: border-box;
-  padding: 20px;
-  gap: 20px;
-} */
-    #content {
-      display: grid;
-      position: absolute;
-      height: 50vh;
-      width: 37vw;
-      /* border: 2px solid green; */
-      top: 25%;
-      left: 30%;
-      grid-template-columns: 100px 100px 100px 100px;
-      grid-template-rows: 100px 100px 100px 100px;
-      gap: 2px;
-    }
-
-    .left-side {
-      box-shadow: 0 2px 7px black;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      grid-column: 1 / 5;
-      grid-row: 1 / 10;
-      background-color: rgb(244, 236, 224);
-    }
-
-    #profile {
-      height: 90%;
-      text-align: center;
-    }
-
-    .container {
-      text-align: center;
-      height: 5%;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #profile-pic {
-      width: 65%;
-      height: 60%;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 10px;
-      margin-top: 30px;
-    }
-
-    .right-side {
-      position: relative;
-      display: flex;
-
-      grid-column: 5 / 10;
-      grid-row: 1 / 10;
-      background-color: whitesmoke;
-    }
-
-    #profile,
-    .container,
-    #about_me {
-      margin-bottom: 20px;
-      width: 100%;
-    }
-    strong {
-      font-size: 20px;
-      font-weight: bold;
-    }
-    #about_me {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      top: 5px;
-      left: 20px;
-      text-align: center;
-      height: 100%;
-      justify-content: center;
-    }
-    .button {
-      background-color: whitesmoke;
-      border: none;
-      padding: 10px 20px;
-      border: 2px solid black;
-      border-radius: 50px;
-      cursor: pointer;
-      margin: 5px;
-    }
-    .resume {
-      background-color: #007bff;
-      color: white;
-    }
-  </style>
   <body>
     <header class="top-nav">
       <div class="logo">
         <span class="dot"></span>
-        <strong class="logo-name">Borys Solorzano</strong> / SOFTWARE DEVELOPER
+        <span>Borys Solorzano / SOFTWARE DEVELOPER</span>
       </div>
       <nav>
         <a href="index.html">ABOUT ME</a>
         <a href="resume.html">RESUME</a>
-        <!-- <a href="">PROJECTS</a> -->
         <a href="contact.html">CONTACT</a>
       </nav>
     </header>
 
-    <div id="background-box"></div>
-
-    <div id="content">
-      <div class="left-side">
-        <div id="profile">
-          <img src="img\IMG_4601.jpg" alt="Head-shot" id="profile-pic" />
-          <h2 id="name">Borys<br />Solorzano</h2>
-          <hr />
-          <p id="tagline">Aspiring Software Developer</p>
-        </div>
-        <div class="container">
-          <div class="social-icons">
-            <a href="https://facebook.com" target="_blank"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="https://twitter.com" target="_blank"
-              ><i class="fab fa-twitter"></i
-            ></a>
-            <a href="https://instagram.com" target="_blank"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a href="https://linkedin.com" target="_blank"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-          </div>
+    <section class="grid-container">
+      <div class="card left-side">
+        <img src="img/IMG_4601.jpg" alt="Head-shot" id="profile-pic" />
+        <h2>Borys Solorzano</h2>
+        <p id="tagline">Aspiring Software Developer</p>
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="https://twitter.com" target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="https://instagram.com" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://linkedin.com" target="_blank"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
         </div>
       </div>
 
-      <div class="right-side">
-        <div id="about_me">
-          <h1>HELLO</h1>
-          <h3>This is me and what I'm all about</h3>
-          <div>
-            <a href="resume.html" class="button resume">RESUME</a>
-            <a href="contact.html" class="button">CONTACT</a>
-          </div>
+      <div class="card right-side">
+        <h1>HELLO</h1>
+        <h3>This is me and what I'm all about</h3>
+        <p>
+          I’m a full-time junior at CUNY City Tech, eager to begin my journey as
+          a software developer. To explore what a career in tech truly involves,
+          I’ve been fortunate to join TTPR. Although my experience with web
+          development is limited, I’m driven by curiosity and a strong desire to
+          learn.
+        </p>
+        <a href="resume.html" class="button resume">RESUME</a>
+        <a href="contact.html" class="button">CONTACT</a>
+      </div>
+
+      <div class="card">
+        <div class="image-wrap">
+          <img
+            src="img\{3DBA0E5D-C660-4FFE-A044-871A2D6CF988}.png"
+            alt="Project Sample"
+          />
           <p>
-            I’m a full-time junior at CUNY City Tech, eager to begin my journey
-            <br />as a software developer. To explore what a career in tech
-            truly involves,<br />
-            I’ve been fortunate to join TTPR. Although my experience with web<br />
-            development is limited, I’m driven by curiosity and a strong desire
-            to <br />learn. I know I may face challenges, but I’m confident that
-            with persistence <br />and passion, I’ll catch up and carve out my
-            place as a software developer.
+            Although I have limited experience as a software developer, I’ve
+            already completed three projects that have helped me grow
+            significantly. One of them is this personal website, which has
+            taught me the importance of layout structure—specifically how to
+            give elements their own space and adjust positioning without
+            compromising design aesthetics. The second project was a basic
+            financial tracker. Its main purpose was to take a user's
+            income—regardless of pay frequency—and convert it into weekly and
+            yearly values. It also allowed users to categorize and total their
+            expenses as either negotiable or non-negotiable, ultimately helping
+            them visualize potential savings by rearranging their spending
+            priorities. Currently, I’m working on a sports-focused platform
+            designed to help users connect with others, discover tournaments,
+            find coaches, and build friendships—all aimed at fostering growth
+            through shared athletic interests.
           </p>
         </div>
       </div>
-    </div>
+
+      <div class="card">
+        <div class="image-wrap">
+          <img src="img\IMG_0637.jpg" alt="Learning" />
+          <p>
+            I love to travel to immerse myself in the cuisine, culture, and
+            rhythm of life in other countries. It gives me a sense of peace amid
+            the nonstop demands of work, school, internships, and personal
+            responsibilities. Meeting new people, even briefly, often feels like
+            a spontaneous adventure—especially when I get invited into someone
+            else's plans or traditions. What excites me most, though, is the
+            dramatic change in scenery. Unlike the urban pace of New York City,
+            many places offer waterfalls, hills, flower fields, serene lakes,
+            open countryside, and ancient ruins—landscapes that refresh both
+            mind and spirit. Learning the history of these places is equally
+            rewarding, especially when they’re ones I first discovered through
+            video games, movies, documentaries, or school. There’s always more
+            depth, more humanity, and more wonder than I expected
+          </p>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
