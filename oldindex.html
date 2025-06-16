@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <style>
+    body,
+    html {
+      /* border: 2px solid red; */
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+      box-sizing: border-box;
+      margin: 0;
+      background-color: whitesmoke;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    a {
+      font-size: 2rem;
+      text-decoration: none;
+      color: inherit;
+    }
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 120px;
+      font-size: 2rem;
+    }
+    .logo-name {
+      font-weight: bold;
+      color: #333;
+      font-size: 2rem;
+    }
+    nav a {
+      margin-left: 20px;
+      font-weight: 500;
+      color: #555;
+    }
+    .logo .dot {
+      /* width: 10px;
+  height: 10px; */
+      background-color: #007bff;
+      border-radius: 50%;
+      /* display: inline-block; */
+      margin-right: 8px;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      font-size: 1rem;
+      color: #333;
+      text-decoration: none;
+      display: inline-flex;
+      bottom: 10px;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #007bff;
+    }
+    #background-box {
+      position: absolute;
+      display: flex;
+      justify-content: start;
+      align-items: start;
+      /* border: 2px solid blue; */
+      width: 35%;
+      height: 85%;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      background-color: rgb(230, 218, 206);
+    }
+    /* #content {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  width: 40%;
+  height: 55%;
+  display: flex;
+  flex-direction: row;
+  border: 2px solid blue;
+  background: white;
+  box-sizing: border-box;
+  padding: 20px;
+  gap: 20px;
+} */
+    #content {
+      display: grid;
+      position: absolute;
+      height: 50vh;
+      width: 37vw;
+      /* border: 2px solid green; */
+      top: 25%;
+      left: 30%;
+      grid-template-columns: 100px 100px 100px 100px;
+      grid-template-rows: 100px 100px 100px 100px;
+      gap: 2px;
+    }
+
+    .left-side {
+      box-shadow: 0 2px 7px black;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      grid-column: 1 / 5;
+      grid-row: 1 / 10;
+      background-color: rgb(244, 236, 224);
+    }
+
+    #profile {
+      height: 90%;
+      text-align: center;
+    }
+
+    .container {
+      text-align: center;
+      height: 5%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #profile-pic {
+      width: 65%;
+      height: 60%;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      margin-top: 30px;
+    }
+
+    .right-side {
+      position: relative;
+      display: flex;
+
+      grid-column: 5 / 10;
+      grid-row: 1 / 10;
+      background-color: whitesmoke;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+      color: #555;
+      margin-top: 10px;
+    }
+    #profile,
+    .container,
+    #about_me {
+      margin-bottom: 20px;
+      width: 100%;
+    }
+    strong {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    #about_me {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      top: 5px;
+      left: 20px;
+      text-align: center;
+      height: 100%;
+      justify-content: center;
+    }
+    .button {
+      background-color: whitesmoke;
+      border: none;
+      padding: 10px 20px;
+      border: 2px solid black;
+      border-radius: 50px;
+      cursor: pointer;
+      margin: 5px;
+    }
+    .resume {
+      background-color: #007bff;
+      color: white;
+    }
+  </style>
+  <body>
+    <header class="top-nav">
+      <div class="logo">
+        <span class="dot"></span>
+        <strong class="logo-name">Borys Solorzano</strong> / SOFTWARE DEVELOPER
+      </div>
+      <nav>
+        <a href="index.html">ABOUT ME</a>
+        <a href="resume.html">RESUME</a>
+        <!-- <a href="">PROJECTS</a> -->
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </header>
+
+    <div id="background-box"></div>
+
+    <div id="content">
+      <div class="left-side">
+        <div id="profile">
+          <img src="img\IMG_4601.jpg" alt="Head-shot" id="profile-pic" />
+          <h2 id="name">Borys<br />Solorzano</h2>
+          <hr />
+          <p id="tagline">Aspiring Software Developer</p>
+        </div>
+        <div class="container">
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://twitter.com" target="_blank"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="https://instagram.com" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://linkedin.com" target="_blank"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-side">
+        <div id="about_me">
+          <h1>HELLO</h1>
+          <h3>This is me and what I'm all about</h3>
+          <div>
+            <a href="resume.html" class="button resume">RESUME</a>
+            <a href="contact.html" class="button">CONTACT</a>
+          </div>
+          <p>
+            I’m a full-time junior at CUNY City Tech, eager to begin my journey
+            <br />as a software developer. To explore what a career in tech
+            truly involves,<br />
+            I’ve been fortunate to join TTPR. Although my experience with web<br />
+            development is limited, I’m driven by curiosity and a strong desire
+            to <br />learn. I know I may face challenges, but I’m confident that
+            with persistence <br />and passion, I’ll catch up and carve out my
+            place as a software developer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
