@@ -71,7 +71,7 @@
 
       .grid-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: auto auto;
         gap: 2rem;
         padding: 5vh 5vw;
         align-items: stretch;
@@ -197,6 +197,9 @@
       }
 
       @media (max-width: 768px) {
+        .grid-container {
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+        }
         .image-wrap {
           flex-direction: column;
           text-align: center;
